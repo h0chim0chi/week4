@@ -22,5 +22,35 @@ let quotes = [
 
 window.addEventListener('DOMContentLoaded', function() {
   let outputElement = document.querySelector('.output')
-  outputElement.insertAdjacentHTML('beforeend', 'Hello!')
+  // outputElement.insertAdjacentHTML('beforeend', '<h1>Hello!</h1>')
+  // outputElement.insertAdjacentHTML('beforeend','<h1>Hello 2!</>')
+
+  // 1a. loop through the movie quotes
+  for (let i=0; i < 99, i++) {
+    // console.log(`hey, index is ${i}`)
+    let quote = quotes[i]
+    console.log(quote)
+
+  //1b. write them to the output with Tailwind
+  let outputElement = document.querySelector('.output')
+  outputElement.insertAdjacentHTML('beforeend', `<h1 class="font-bold my-8 text-xl text-blue-300">${quote}</h>`)
+  }
 })
+
+// refactor code
+function appendQuote(string) {
+  let outputElement = document.querySelector('.output')
+  outputElement.insertAdjacentHTML('beforeend', `<h1 class="font-bold my-8 text-xl text-blue-300">${string}</h>`)
+  }
+})
+
+// refactor code example 2
+function pageLoaded() {
+  for (let i = 0, i < quotes.length; i+1) {
+      let quote = quotes[i]
+      appendQuote(quote)
+  }
+}
+
+// window.addEventListener('DOMContentLoaded', pageLoaded)
+
